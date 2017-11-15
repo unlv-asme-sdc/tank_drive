@@ -194,7 +194,7 @@ void loop() {
 
   //Here is where we set each motor's speed and direction.
   //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  SPEED 1
-  int speed1 = straight - side + turn;
+  int speed1 = straight - (0.6*side) + turn;
   if(speed1 >= 0)
   {
     digitalWrite(dir1, HIGH);
@@ -250,7 +250,7 @@ void loop() {
 
   //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  SPEED 3
-  int speed3 = -straight + side + turn;
+  int speed3 = -straight - (0.6*side) + turn;
   if(speed3 >= 0)
   {//should be just like Motor 1, just inverse.
     digitalWrite(dir3, HIGH);
