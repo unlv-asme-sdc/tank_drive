@@ -149,7 +149,7 @@ void loop() {
   else if(LY < 125)   //joystick is forward
   {
     //straight = -(128 - LY) * 100/127;   //straight factor scaled to 100 -
-    straight = -(128) - LY) * 100/127;
+    straight = -((128) - LY) * 100/127;
   }
   else if(LY > 130)   //joystick is backward
   {
@@ -220,8 +220,8 @@ void loop() {
   //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  SPEED 2
   //Remember that motor 2 is the deadweight and that it runs for the straffing and the turning, but not if the direction is straight.
-  int speed2 = straight + side + turn;
-  if(side >= 0 || turn >= 0)
+  int speed2 = side + turn;
+  if(speed2 >= 0)
   {//Unlike the other motors, M2 only runs if turning or straffing.
     digitalWrite(dir2, HIGH);
   }
